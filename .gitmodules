@@ -1,0 +1,3 @@
+[submodule "enmasse-workshop"]
+	path = enmasse-workshop
+	url = https://github.com/EnMasseProject/enmasse-workshop
