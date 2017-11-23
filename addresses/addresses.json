@@ -1,0 +1,30 @@
+{
+    "apiVersion": "enmasse.io/v1",
+    "kind": "AddressList",
+    "items": [
+      {
+        "metadata": {
+          "name": "temperature"
+        },
+        "spec": {
+          "type": "topic"
+        }
+      },
+      {
+        "metadata": {
+          "name": "max"
+        },
+        "spec": {
+          "type": "anycast"
+        }
+      },
+      {
+        "metadata": {
+          "name": "control"
+        },
+        "spec": {
+          "type": "topic"
+        }
+      }
+    ]
+  }

@@ -139,6 +139,18 @@ Create an addresses for your IoT sensors to report metrics on:
    * _max_ : type anycast - used by Spark driver to report the max temperature
    * _control_ : type topic - used to send control messages to devices. Per-device control messages will be sent to control/$device-id
 
+Instead of using the console, you can interact with the address REST API as well, providing the `addresses.json` file under the `addresses` directory.
+
+```
+curl -X POST -H "content-type: application/json" --data-binary @./addresses/addresses.json http://$(oc get route -o jsonpath='{.spec.host}' restapi)/v1/addresses/default
+```
+
+You can check the creation status in this way.
+
+```
+curl http://$(oc get route restapi -o jsonpath='{.spec.host}')/v1/addresses/default
+```
+
 ### Installing Apache Spark
 
 An official support for Apache Spark on OpenShift is provided by the [radanalytics.io](https://radanalytics.io/) project by means of the Oshinko application with a Web UI for deploying a Spark cluster. Other than using such a Web UI, a CLI tool is available as well which is used for this workshop.
