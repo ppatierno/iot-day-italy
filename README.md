@@ -3,15 +3,21 @@
 ![IoT Day Italy](images/iot_day_italy.png)
 
 This repository is about the demo for the session "Open sourcing the IoT" at the IoT Day Italy 2017 (Naples, November 24th).
-It comes from the [EnMasse workshop](https://github.com/EnMasseProject/enmasse-workshop) that is needed for building images, applications and all the stuff you need for running the demo. It means that you need to clone that repository as well.
+It comes from the [EnMasse workshop](https://github.com/EnMasseProject/enmasse-workshop) that is needed for building images, applications and all the stuff you need for running the demo. This repo is provided as submodule of the current one.
 This landing page is supposed to be just a brief description showing the main steps for having the demo running on a local machine.
 
 ## Prerequisits
 
-There are not so much prerequisits for running this demo. The only one is to have [Maven](https://maven.apache.org/) already installed on the machine. If you don't have that, there is the [official installation guide](https://maven.apache.org/install.html) for doing that.
-Finally, you have to clone the [EnMasse workshop](https://github.com/EnMasseProject/enmasse-workshop) repository locally in order to have all the source code needed for building the demo itself.
+There are not so much prerequisits for running this demo. The first one is to have [Maven](https://maven.apache.org/) already installed on the machine. If you don't have that, there is the [official installation guide](https://maven.apache.org/install.html) for doing that.
+Finally, the [EnMasse workshop](https://github.com/EnMasseProject/enmasse-workshop) repository is provided as a Git submodule so you need to do the following for cloning it (if your current Git version doesn't do that automatically).
 
-In this workshop we will be deploying 4 different components:
+```
+git submodule update --init
+```
+
+## Setting up
+
+In this demo we will be deploying 4 different components:
 
 * EnMasse messaging service
 * A Spark cluster for doing analytics
