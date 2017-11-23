@@ -1,5 +1,7 @@
 # IoT Day Italy "Open sourcing the IoT" demo
 
+![IoT Day Italy](images/iot_day_italy.png)
+
 This repository is about the demo for the session "Open sourcing the IoT" at the IoT Day Italy 2017 (Naples, November 24th).
 It comes from the [EnMasse workshop](https://github.com/EnMasseProject/enmasse-workshop) that is needed for building images, applications and all the stuff you need for running the demo. It means that you need to clone that repository as well.
 This landing page is supposed to be just a brief description showing the main steps for having the demo running on a local machine.
@@ -252,3 +254,25 @@ oc extract secret/external-certs-mqtt --to=mqtt-certs -n $NAMESPACE
 Both commands extract the certificate `server-cert.pem` file. The file path needs to be set as value for the device configuration property _device.transport.ssl.servercert_.
 
 Other than that, be sure that _service.hostname_ property is set to the messaging (for AMQP devices) or mqtt (for MQTT devices) route. At same time the _service.port_ property needs to be set to 443.
+
+#### Using Maven
+
+In order to run the `HeatingDevice` application you can use the Maven `exec` plugin with the following command from the `clients` directory.
+
+```
+cd iot/clients
+mvn exec:java -Dexec.mainClass=io.enmasse.iot.device.impl.HeatingDevice -Dexec.args=<path-to-device-properties-file>
+```
+
+You can run such command more times in order to start more than one devices (using different Keycloak users and device-id for them). The provided `device-amqp.properties` and `device-mqtt.properties` files can be used as starting point for AMQP and MQTT device configuration.
+
+#### Using pre-built JARs
+
+The provided `heating-device.jar` can be used for starting a simulated heating device with the following command.
+
+```
+cd iot/clients/jar
+java -jar heating-device.jar <path-to-device-properties-file>
+```
+
+The console application needs only one argument which is the path to the `device.properties` file with the device configuration.
