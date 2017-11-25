@@ -6,6 +6,8 @@ This repository is about the demo for the session "Open sourcing the IoT" at the
 It comes from the [EnMasse workshop](https://github.com/EnMasseProject/enmasse-workshop) that is needed for building images, applications and all the stuff you need for running the demo. This repo is provided as submodule of the current one.
 This landing page is supposed to be just a brief description showing the main steps for having the demo running on a local machine.
 
+You can find the slides of the session [here](https://www.slideshare.net/paolopat/open-sourcing-the-iot).
+
 ## Prerequisits
 
 There are not so much prerequisits for running this demo. The first one is to have [Maven](https://maven.apache.org/) already installed on the machine. If you don't have that, there is the [official installation guide](https://maven.apache.org/install.html) for doing that.
